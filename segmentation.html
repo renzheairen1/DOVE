@@ -39,7 +39,7 @@
         </aside>
         <div class="segmentation-content">
           <figure class="result-slot">
-            <img src="assets/results/segmentation/toothseg_instance_segmentation_dot_whisker_lollipop.png" alt="results image">
+            <img src="assets/results/segmentation/toothseg_instance_segmentation_dot_whisker_lollipop.webp" alt="results image">
             <figcaption><b>Figure 1</b>Four-model comparison on ToothSeg.</figcaption>
           </figure>
         </div>
@@ -54,7 +54,7 @@
         </aside>
         <div class="segmentation-content">
           <figure class="result-slot">
-            <img src="assets/results/segmentation/gingivitis_metadent_segmentation_dot_whisker_lollipop.png" alt="results image">
+            <img src="assets/results/segmentation/gingivitis_metadent_segmentation_dot_whisker_lollipop.webp" alt="results image">
             <figcaption><b>Figure 2</b>Four-model comparison on Gingivitis</figcaption>
           </figure>
         </div>
@@ -70,7 +70,7 @@
         </aside>
         <div class="segmentation-content">
           <figure class="result-slot">
-            <img src="assets/results/segmentation/dentalai_segmentation_dot_whisker_lollipop.png" alt="results image">
+            <img src="assets/results/segmentation/dentalai_segmentation_dot_whisker_lollipop.webp" alt="results image">
             <figcaption><b>Figure 3</b> Four-model comparison on Dentalai.</figcaption>
           </figure>
         </div>
@@ -85,7 +85,7 @@
         </aside>
         <div class="segmentation-content">
           <figure class="result-slot">
-            <img src="assets/results/segmentation/alphadent_segmentation_dot_whisker_lollipop.png" alt="results image">
+            <img src="assets/results/segmentation/alphadent_segmentation_dot_whisker_lollipop.webp" alt="results image">
             <figcaption><b>Figure 4</b> Four-model comparison on AlphaDent</figcaption>
           </figure>
         </div>
@@ -99,38 +99,38 @@
           <div class="qualitative-slot reveal">
             <div class="qualitative-labels"><span>Input image</span><span>Ground truth</span><span>DINOv3</span><span>DOVE</span></div>
             <div class="qualitative-canvas">
-              <img src="assets/results/segmentation/visualization/original.png">
-              <img src="assets/results/segmentation/visualization/ground_truth.png">
-              <img src="assets/results/segmentation/visualization/baseline_prediction.png">
-              <img src="assets/results/segmentation/visualization/teacher_checkpoint_prediction.png">
+              <img src="assets/results/segmentation/visualization/original.webp">
+              <img src="assets/results/segmentation/visualization/ground_truth.webp">
+              <img src="assets/results/segmentation/visualization/baseline_prediction.webp">
+              <img src="assets/results/segmentation/visualization/teacher_checkpoint_prediction.webp">
             </div>
 
             <div class="qualitative-canvas">
-              <img src="assets/results/segmentation/visualization/2/original.png">
-              <img src="assets/results/segmentation/visualization/2/ground_truth.png">
-              <img src="assets/results/segmentation/visualization/2/baseline_prediction.png">
-              <img src="assets/results/segmentation/visualization/2/teacher_checkpoint_prediction.png">
+              <img src="assets/results/segmentation/visualization/2/original.webp">
+              <img src="assets/results/segmentation/visualization/2/ground_truth.webp">
+              <img src="assets/results/segmentation/visualization/2/baseline_prediction.webp">
+              <img src="assets/results/segmentation/visualization/2/teacher_checkpoint_prediction.webp">
             </div>
 
             <div class="qualitative-canvas">
-              <img src="assets/results/segmentation/visualization/3/original.png">
-              <img src="assets/results/segmentation/visualization/3/ground_truth.png">
-              <img src="assets/results/segmentation/visualization/3/baseline_prediction.png">
-              <img src="assets/results/segmentation/visualization/3/teacher_checkpoint_prediction.png">
+              <img src="assets/results/segmentation/visualization/3/original.webp">
+              <img src="assets/results/segmentation/visualization/3/ground_truth.webp">
+              <img src="assets/results/segmentation/visualization/3/baseline_prediction.webp">
+              <img src="assets/results/segmentation/visualization/3/teacher_checkpoint_prediction.webp">
             </div>
 
             <div class="qualitative-canvas">
-              <img src="assets/results/segmentation/visualization/4/sample_02_original.png">
-              <img src="assets/results/segmentation/visualization/4/sample_02_ground_truth.png">
-              <img src="assets/results/segmentation/visualization/4/sample_02_baseline_prediction.png">
-              <img src="assets/results/segmentation/visualization/4/sample_02_teacher_checkpoint_prediction.png">
+              <img src="assets/results/segmentation/visualization/4/sample_02_original.webp">
+              <img src="assets/results/segmentation/visualization/4/sample_02_ground_truth.webp">
+              <img src="assets/results/segmentation/visualization/4/sample_02_baseline_prediction.webp">
+              <img src="assets/results/segmentation/visualization/4/sample_02_teacher_checkpoint_prediction.webp">
             </div>
 
             <div class="qualitative-canvas">
-              <img src="assets/results/segmentation/visualization/5/sample_03_original.png">
-              <img src="assets/results/segmentation/visualization/5/sample_03_ground_truth.png">
-              <img src="assets/results/segmentation/visualization/5/sample_03_baseline_prediction.png">
-              <img src="assets/results/segmentation/visualization/5/sample_03_teacher_checkpoint_prediction.png">
+              <img src="assets/results/segmentation/visualization/5/sample_03_original.webp">
+              <img src="assets/results/segmentation/visualization/5/sample_03_ground_truth.webp">
+              <img src="assets/results/segmentation/visualization/5/sample_03_baseline_prediction.webp">
+              <img src="assets/results/segmentation/visualization/5/sample_03_teacher_checkpoint_prediction.webp">
             </div>
           </div>
       </div>
@@ -138,6 +138,18 @@
   </main>
 
   <footer class="footer"><div class="container minimal-footer"><div><p class="footer-title">DOVE · Dental Optical Visual Encoder</p><p class="footer-sub">Oral photography representation learning</p></div><a href="retrieval.html">Retrieval &amp; PCA &rarr;</a></div></footer>
+  <script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);  // 只触发一次，不重复动画
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
