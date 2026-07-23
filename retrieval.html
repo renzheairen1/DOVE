@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DOVE image retrieval and representation visualization." />
+  <title>DOVE Representation Visualization</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="results-page">
+  <header class="navbar">
+    <div class="nav-inner container">
+      <a href="index.html" class="nav-brand"><span class="brand-mark" aria-hidden="true"></span>DOVE</a>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="classification.html">Classification</a>
+        <a href="segmentation.html">Segmentation</a>
+        <a href="retrieval.html" class="active">Retrieval &amp; PCA</a>
+      </nav><button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button></div>
+    </header>
+
+  <main>
+    <section class="minimal-hero"><div class="container narrow-wide"><span class="section-eyebrow">Representation Analysis</span><h1>DOVE Representation Visualization</h1><p>Qualitative image retrieval and PCA visualization.</p></div></section>
+
+    <section class="result-section"><div class="container">
+      <header class="result-section-head reveal"><span class="section-no">01</span><div><span class="section-eyebrow">Image retrieval</span><h2>Nearest-neighbor examples</h2></div></header>
+      <div class="retrieval-protocol reveal"><div><span>01</span><b>Query image</b></div><i>→</i><div><span>02</span><b>DOVE embedding</b></div><i>→</i><div><span>03</span><b>Cosine similarity</b></div><i>→</i><div><span>04</span><b>Top-3 retrieval</b></div></div>
+
+      <div class="retrieval-placeholder-list">
+        <article class="retrieval-placeholder reveal">
+          <header><span>Example 01</span><h3>Caries</h3></header>
+          <div class="retrieval-placeholder-grid">
+            <div class="image-slot query-slot">
+              <img src="assets/results/retrieval/caries/1663_jpg.rf.1e8dfbf0c719537f187166adcbabf23a.jpg" alt="query image">
+              <span>Query image</span>
+            </div>
+            <i>→</i>
+            <div class="image-slot">
+              <img src="assets/results/retrieval/caries/query_top01.png" alt="top 1">
+              <span>Top 1</span>
+            </div>
+            <div class="image-slot">
+              <img src="assets/results/retrieval/caries/query_top02.png" alt="top 2">
+              <span>Top 2</span>
+            </div>
+            <div class="image-slot">
+              <img src="assets/results/retrieval/caries/query_top03.jpg" alt="top 3">
+              <span>Top 3</span>
+            </div>
+          </div>
+        </article>
+        <article class="retrieval-placeholder reveal">
+          <header><span>Example 02</span><h3>Oral cancer</h3></header>
+          <div class="retrieval-placeholder-grid">
+            <div class="image-slot query-slot">
+              <img src="assets/results/retrieval/oral_cancer/087.jpeg" alt="query image">
+              <span>Query image</span>
+            </div>
+            <i>→</i>
+            <div class="image-slot">
+              <img src="assets/results/retrieval/oral_cancer/query_top01.jpg" alt="top 1">
+              <span>Top 1</span>
+            </div>
+            <div class="image-slot">
+              <img src="assets/results/retrieval/oral_cancer/query_top02.jpg" alt="top 2">
+              <span>Top 2</span>
+            </div>
+            <div class="image-slot">
+              <img src="assets/results/retrieval/oral_cancer/query_top03.jpg" alt="top 3">
+              <span>Top 3</span>
+            </div>
+          </div>
+        </article>
+        <article class="retrieval-placeholder reveal">
+          <header><span>Example 03</span><h3>Restoration</h3></header>
+          <div class="retrieval-placeholder-grid">
+            <div class="image-slot query-slot">
+              <img src="assets/results/retrieval/restorations/284_jpg.rf.a8711c939c8d230b022f8722e12223dc.jpg" alt="query image">
+              <span>Query image</span>
+            </div>
+            <i>→</i>
+            <div class="image-slot">
+              <img src="assets/results/retrieval/restorations/query_top01.jpg" alt="top1">
+              <span>Top 1</span>
+            </div>
+            <div class="image-slot">
+              <img src="assets/results/retrieval/restorations/query_top02.jpg" alt="top2">
+              <span>Top 2</span>
+            </div>
+            <div class="image-slot">
+              <img src="assets/results/retrieval/restorations/query_top03.jpg" alt="top3">
+              <span>Top 3</span>
+            </div>
+          </div>
+        </article>
+        <article class="retrieval-placeholder reveal">
+          <header><span>Example 04</span><h3>Oral leukoplakia</h3></header>
+          <div class="retrieval-placeholder-grid">
+            <div class="image-slot query-slot">
+              <img src="assets/results/retrieval/oral_leukoplakia/2-21.jpg" alt="query image">
+              <span>Query image</span>
+            </div>
+            <i>→</i>
+            <div class="image-slot">
+              <img src="assets/results/retrieval/oral_leukoplakia/query_top01.jpg" alt="top1">
+              <span>Top 1</span>
+            </div>
+            <div class="image-slot">
+              <img src="assets/results/retrieval/oral_leukoplakia/query_top02.jpg" alt="top2">
+              <span>Top 2</span>
+            </div>
+            <div class="image-slot">
+              <img src="assets/results/retrieval/oral_leukoplakia/query_top03.jpg" alt="top3">
+              <span>Top 3</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div></section>
+
+    <section class="result-section soft-section">
+      <div class="container">
+        <header class="result-section-head reveal">
+          <span class="section-no">02</span><div><span class="section-eyebrow">Patch-level PCA</span><h2>Representation structure</h2></div>
+        </header>
+        <div class="pca-placeholder-grid reveal">
+          <figure>
+            <img src="assets/results/retrieval/oral_cancer/087.jpeg">
+            <img src="assets/results/retrieval/oral_cancer/query_top01.jpg">  
+            <img src="assets/results/retrieval/oral_cancer/query_top02.jpg">
+            <img src="assets/results/retrieval/oral_cancer/query_top03.jpg">  
+            <figcaption>A Original</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/results/pca/oralcancer/image_000001_pca_rgb.png" alt="pca image">
+            <img src="assets/results/pca/oralcancer/image_000002_pca_rgb.png" alt="pca image">
+            <img src="assets/results/pca/oralcancer/image_000003_pca_rgb.png" alt="pca image">
+            <img src="assets/results/pca/oralcancer/image_000004_pca_rgb.png" alt="pca image">
+            <figcaption>B PCA visualization</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/results/pca/oralcancer/image_000001_pca_rgb_without_background.png">
+            <img src="assets/results/pca/oralcancer/image_000002_pca_rgb_without_background.png">
+            <img src="assets/results/pca/oralcancer/image_000003_pca_rgb_without_background.png">
+            <img src="assets/results/pca/oralcancer/image_000004_pca_rgb_without_background.png">
+            <figcaption>C Foreground separation</figcaption>
+          </figure>
+        </div>
+
+        <div class="pca-placeholder-grid reveal">
+          <figure>
+            <img src="assets/results/retrieval/caries/1663_jpg.rf.1e8dfbf0c719537f187166adcbabf23a.jpg">
+            <img src="assets/results/retrieval/caries/query_top01.png">
+            <img src="assets/results/retrieval/caries/query_top02.png">
+            <img src="assets/results/retrieval/caries/query_top03.jpg">
+            <figcaption>A Original</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/results/pca/caries/image_000001_pca_rgb.png">
+            <img src="assets/results/pca/caries/image_000002_pca_rgb.png">
+            <img src="assets/results/pca/caries/image_000003_pca_rgb.png">
+            <img src="assets/results/pca/caries/image_000004_pca_rgb.png">
+            <figcaption>B PCA Visualization</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/results/pca/caries/image_000001_pca_rgb_without_background.png">
+            <img src="assets/results/pca/caries/image_000002_pca_rgb_without_background.png">
+            <img src="assets/results/pca/caries/image_000003_pca_rgb_without_background.png">
+            <img src="assets/results/pca/caries/image_000004_pca_rgb_without_background.png">
+            <figcaption>C Foreground separation</figcaption>
+          </figure>
+        </div> 
+
+        <div class="pca-placeholder-grid">
+          <figure>
+            <img src="assets/results/retrieval/oral_leukoplakia/2-21.jpg">
+            <img src="assets/results/retrieval/oral_leukoplakia/query_top01.jpg">
+            <img src="assets/results/retrieval/oral_leukoplakia/query_top02.jpg">
+            <img src="assets/results/retrieval/oral_leukoplakia/query_top03.jpg">
+            <figcaption>A Original</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/results/pca/oralleukoplakia/image_000001_pca_rgb.png">
+            <img src="assets/results/pca/oralleukoplakia/image_000002_pca_rgb.png">
+            <img src="assets/results/pca/oralleukoplakia/image_000003_pca_rgb.png">
+            <img src="assets/results/pca/oralleukoplakia/image_000004_pca_rgb.png">
+            <figcaption>B PCA Visualization</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/results/pca/oralleukoplakia/image_000001_pca_rgb_without_background.png">
+            <img src="assets/results/pca/oralleukoplakia/image_000002_pca_rgb_without_background.png">
+            <img src="assets/results/pca/oralleukoplakia/image_000003_pca_rgb_without_background.png">
+            <img src="assets/results/pca/oralleukoplakia/image_000004_pca_rgb_without_background.png">
+            <figcaption>C Foreground separation</figcaption>
+          </figure>
+        </div>
+
+        <div class="pca-placeholder-grid">
+          <figure>
+            <img src="assets/results/retrieval/restorations/284_jpg.rf.a8711c939c8d230b022f8722e12223dc.jpg">
+            <img src="assets/results/retrieval/restorations/query_top01.jpg">
+            <img src="assets/results/retrieval/restorations/query_top02.jpg">
+            <img src="assets/results/retrieval/restorations/query_top03.jpg">
+            <figcaption>A Original</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/results/pca/restorations/image_000001_pca_rgb.png">
+            <img src="assets/results/pca/restorations/image_000002_pca_rgb.png">
+            <img src="assets/results/pca/restorations/image_000003_pca_rgb.png">
+            <img src="assets/results/pca/restorations/image_000004_pca_rgb.png">
+            <figcaption>B OCA VIsualization</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/results/pca/restorations/image_000001_pca_rgb_without_background.png">
+            <img src="assets/results/pca/restorations/image_000002_pca_rgb_without_background.png">
+            <img src="assets/results/pca/restorations/image_000003_pca_rgb_without_background.png">
+            <img src="assets/results/pca/restorations/image_000004_pca_rgb_without_background.png">
+            <figcaption>C Foreground separation</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container minimal-footer">
+      <div>
+        <p class="footer-title">DOVE · Dental Optical Visual Encoder</p>
+        <p class="footer-sub">Oral photography representation learning</p>
+      </div>
+      <a href="classification.html">Back to classification ↑</a>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

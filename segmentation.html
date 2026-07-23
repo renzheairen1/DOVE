@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DOVE semantic segmentation benchmark results." />
+  <title>DOVE Semantic Segmentation Performance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="results-page">
+  <header class="navbar">
+    <div class="nav-inner container">
+      <a href="index.html" class="nav-brand"><span class="brand-mark" aria-hidden="true"></span>DOVE</a>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="classification.html">Classification</a>
+        <a href="segmentation.html" class="active">Segmentation</a>
+        <a href="retrieval.html">Retrieval &amp; PCA</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="minimal-hero"><div class="container narrow-wide"><span class="section-eyebrow">Downstream Evaluation · Segmentation</span><h1>DOVE Semantic Segmentation Performance</h1><p>Frozen encoder evaluation with a shared lightweight segmentation head.</p></div></section>
+    <section class="protocol-band"><div class="container protocol-line"><span>Protocol</span><p>Frozen DOVE encoder <i>+</i> Linear segmentation head</p><div><b>5-shot</b><b>10-shot</b><b>20-shot</b><b>50-shot</b><b>Full set</b></div></div></section>
+
+    <section class="result-section segmentation-list"><div class="container">
+      <header class="result-section-head reveal"><span class="section-no">01</span><div><span class="section-eyebrow">Four benchmarks</span><h2>Dataset-level results</h2></div></header>
+
+      <article class="segmentation-block reveal">
+        <aside class="segmentation-intro">
+          <span>Dataset 01</span>
+          <h3>ToothSeg</h3>
+          <p>The dataset was annotated using an in-house software platform developed by our team. There are a total of 1106 pieces. Divided into 33 segmentation categories, each of the 32 teeth is treated as a separate category, with the background as an additional category.</p>
+          <dl><div><dt>Images</dt><dd>1106</dd></div><div><dt>Classes</dt><dd>33</dd></div></dl>
+        </aside>
+        <div class="segmentation-content">
+          <figure class="result-slot">
+            <img src="assets/results/segmentation/toothseg_instance_segmentation_dot_whisker_lollipop.png" alt="results image">
+            <figcaption><b>Figure 1</b>Four-model comparison on ToothSeg.</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="segmentation-block reveal">
+        <aside class="segmentation-intro">
+          <span>Dataset 02</span>
+          <h3>Gingivitis</h3>
+          <p>Dataset introduction / task description</p>
+          <dl><div><dt>Images</dt><dd>284</dd></div><div><dt>Classes</dt><dd>2</dd></div></dl>
+        </aside>
+        <div class="segmentation-content">
+          <figure class="result-slot">
+            <img src="assets/results/segmentation/gingivitis_metadent_segmentation_dot_whisker_lollipop.png" alt="results image">
+            <figcaption><b>Figure 2</b>Four-model comparison on Gingivitis</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="segmentation-block reveal">
+        <aside class="segmentation-intro">
+          <span>Dataset 03</span>
+          <h3>Dentalai</h3>
+          <p>The dataset consists of 2495 images with 28904 labeled objects belonging to 4 different classes including tooth, caries, cavity, and other: crack.</p>
+          <dl><div><dt>Images</dt><dd>2495</dd></div><div><dt>Classes</dt><dd>4</dd></div>
+          </dl>
+        </aside>
+        <div class="segmentation-content">
+          <figure class="result-slot">
+            <img src="assets/results/segmentation/dentalai_segmentation_dot_whisker_lollipop.png" alt="results image">
+            <figcaption><b>Figure 3</b> Four-model comparison on Dentalai.</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="segmentation-block reveal">
+        <aside class="segmentation-intro">
+          <span>Dataset 04</span>
+          <h3>AlphaDent</h3>
+          <p>It contains 1,320 high-resolution DSLR photographs acquired using a Canon 6D Mark II camera and a 100-mm macro lens. Dentist-annotated instance masks are provided for nine categories: abrasion, fillings, crowns, and six classes of dental caries</p>
+          <dl><div><dt>Images</dt><dd>1320</dd></div><div><dt>Classes</dt><dd>9</dd></div></dl>
+        </aside>
+        <div class="segmentation-content">
+          <figure class="result-slot">
+            <img src="assets/results/segmentation/alphadent_segmentation_dot_whisker_lollipop.png" alt="results image">
+            <figcaption><b>Figure 4</b> Four-model comparison on AlphaDent</figcaption>
+          </figure>
+        </div>
+      </article>
+    </div></section>
+
+    <section class="result-section soft-section">
+      <div class="container">
+        <header class="result-section-head reveal">
+          <span class="section-no">02</span><div><span class="section-eyebrow">Qualitative results</span><h2>Linear segmentation examples</h2></div></header>
+          <div class="qualitative-slot reveal">
+            <div class="qualitative-labels"><span>Input image</span><span>Ground truth</span><span>DINOv3</span><span>DOVE</span></div>
+            <div class="qualitative-canvas">
+              <img src="assets/results/segmentation/visualization/original.png">
+              <img src="assets/results/segmentation/visualization/ground_truth.png">
+              <img src="assets/results/segmentation/visualization/baseline_prediction.png">
+              <img src="assets/results/segmentation/visualization/teacher_checkpoint_prediction.png">
+            </div>
+
+            <div class="qualitative-canvas">
+              <img src="assets/results/segmentation/visualization/2/original.png">
+              <img src="assets/results/segmentation/visualization/2/ground_truth.png">
+              <img src="assets/results/segmentation/visualization/2/baseline_prediction.png">
+              <img src="assets/results/segmentation/visualization/2/teacher_checkpoint_prediction.png">
+            </div>
+
+            <div class="qualitative-canvas">
+              <img src="assets/results/segmentation/visualization/3/original.png">
+              <img src="assets/results/segmentation/visualization/3/ground_truth.png">
+              <img src="assets/results/segmentation/visualization/3/baseline_prediction.png">
+              <img src="assets/results/segmentation/visualization/3/teacher_checkpoint_prediction.png">
+            </div>
+
+            <div class="qualitative-canvas">
+              <img src="assets/results/segmentation/visualization/4/sample_02_original.png">
+              <img src="assets/results/segmentation/visualization/4/sample_02_ground_truth.png">
+              <img src="assets/results/segmentation/visualization/4/sample_02_baseline_prediction.png">
+              <img src="assets/results/segmentation/visualization/4/sample_02_teacher_checkpoint_prediction.png">
+            </div>
+
+            <div class="qualitative-canvas">
+              <img src="assets/results/segmentation/visualization/5/sample_03_original.png">
+              <img src="assets/results/segmentation/visualization/5/sample_03_ground_truth.png">
+              <img src="assets/results/segmentation/visualization/5/sample_03_baseline_prediction.png">
+              <img src="assets/results/segmentation/visualization/5/sample_03_teacher_checkpoint_prediction.png">
+            </div>
+          </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container minimal-footer"><div><p class="footer-title">DOVE · Dental Optical Visual Encoder</p><p class="footer-sub">Oral photography representation learning</p></div><a href="retrieval.html">Retrieval &amp; PCA &rarr;</a></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>

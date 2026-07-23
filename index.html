@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!---adapt mobile --> 
+  <meta name="description" content="DOVE: A self-supervised vision foundation model for oral photography understanding." />
+  <title>DOVE — Dental Optical Visual Encoder</title>
+
+  <!-- Typography: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" /> <!--connect google fonts,preconnect accelerate-->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION BAR (shared across all pages)
+       ============================================================ -->
+  <header class="navbar">
+    <div class="nav-inner container">
+      <a href="index.html" class="nav-brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        DOVE
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation"><!--class for CSS;id for js--> 
+        <a href="index.html" class="active">Home</a>
+        <a href="classification.html">Classification</a>
+        <a href="segmentation.html">Segmentation</a>
+        <a href="retrieval.html">Retrieval &amp; PCA</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         1. HERO SECTION — animated dove, title, CTA buttons
+         ============================================================ -->
+    <section class="hero" id="hero"> <!--hero section:首页最重要的大区域-->
+      <div class="container hero-content">
+
+        <!-- Animated dove: pure SVG + CSS (floating, subtle wing motion, soft glow) -->
+        <!-- To use a raster logo instead, replace this block with:
+             <img src="assets/dove.png" alt="DOVE logo" class="dove-img"> -->
+        <div class="dove-wrap" aria-hidden="true">
+          <div class="dove-glow"></div>
+          <svg class="dove-svg" viewBox="0 0 240 200" role="img" aria-label="Stylized dove">
+            <defs>
+              <linearGradient id="doveBody" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%"  stop-color="#1f3a5f" />
+                <stop offset="100%" stop-color="#0f2440" />
+              </linearGradient>
+              <linearGradient id="doveWing" x1="0" y1="1" x2="0" y2="0">
+                <stop offset="0%"  stop-color="#2fa79b" />
+                <stop offset="100%" stop-color="#6fd0c5" />
+              </linearGradient>
+            </defs>
+
+            <!-- Back wing (behind body) -->
+            <path class="wing wing-back" fill="url(#doveWing)" opacity="0.55"
+              d="M118 98 C 94 62 60 46 30 48 C 56 68 78 94 98 110 Z" />  <!-- opacity 透明度-->
+
+            <!-- Tail -->
+            <path fill="url(#doveBody)" d="M56 126 L18 152 L64 142 Z" />
+
+            <!-- Body + head -->
+            <path fill="url(#doveBody)"
+              d="M52 128
+                 C 52 100 86 84 122 88
+                 C 140 90 152 82 158 70
+                 C 163 82 160 94 150 102
+                 C 176 104 194 116 200 132
+                 C 186 130 172 132 162 138
+                 C 148 152 116 158 90 152
+                 C 68 148 52 142 52 128 Z" />
+
+            <!-- Beak -->
+            <path fill="#2fa79b" d="M158 68 L174 62 L161 76 Z" />
+
+            <!-- Eye -->
+            <circle cx="149" cy="80" r="2.6" fill="#ffffff" />
+
+            <!-- Front wing (subtle flap animation) -->
+            <path class="wing wing-front" fill="url(#doveWing)"
+              d="M112 106 C 98 66 114 32 150 20 C 136 52 138 86 130 112 Z" />
+          </svg>
+        </div>
+
+        <h1 class="hero-title">DOVE</h1>
+        <p class="hero-subtitle">Dental Optical Visual Encoder</p>
+        <p class="hero-tagline">
+          A Self-Supervised Vision Foundation Model for Oral Photography Understanding
+        </p>
+
+        <div class="hero-buttons">
+          <a href="classification.html" class="btn btn-primary">View Results</a>
+          <a href="#model" class="btn btn-outline">Explore Model</a> <!--#model means 在当前页面寻找id="model"然后滚动过去-->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2. RESEARCH OVERVIEW — abstract-style text block
+         ============================================================ -->
+    <section class="section" id="overview">
+      <div class="container narrow reveal">
+        <span class="section-eyebrow">Research Overview</span> <!--span：inline element行内元素,包裹一小段元素，用css单独控制-->
+        <h2 class="section-title">Learning from Unlabeled Oral Photographs</h2>
+        <p class="abstract-text">
+          Oral photographs contain rich clinical information but exhibit substantial visual
+          heterogeneity caused by variations in imaging devices, illumination, viewing angles,
+          and clinical conditions. DOVE was developed through self-supervised pretraining on a
+          large-scale corpus of unlabeled oral photographs using a teacher–student framework
+          derived from DINOv3. The model learns domain-specific visual representations and
+          demonstrates strong transferability across multiple oral imaging tasks, including
+          classification, semantic segmentation, and image retrieval.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. DATASET SHOWCASE — responsive gallery with hover zoom
+         ============================================================ -->
+    <section class="section section-gray" id="data">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-eyebrow">Pretraining Data</span>
+          <h2 class="section-title">Large-Scale Oral Photography Corpus</h2>
+          <p class="section-desc">
+            DOVE is pretrained on various unlabeled clinical photos with different semantics.
+          </p>
+        </div>
+
+        <!-- Gallery grid. Each cell uses a CSS placeholder;
+             replace <div class="img-placeholder ..."> with
+             <img src="assets/data_tooth.jpg" alt="..."> when images are ready. -->
+        <div class="gallery reveal">
+          <figure class="gallery-item">
+            <img src="assets/unlabeled_images/844846006489.0_1.jpg" alt="Oral Photograph">
+            <!--br:break line,换行-->
+            <!-- <figcaption>Tooth photographs</figcaption> -->
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/unlabeled_images/000018531.png" alt="Oral Photograph">
+            <!-- <div class="img-placeholder ph-rose"><span>Gingival<br>Condition</span></div> -->
+            <!-- <figcaption>Gingival conditions</figcaption> -->
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/unlabeled_images/000046342.png" alt="Oral Photograph">
+            <!-- <div class="img-placeholder ph-navy"><span>Mucosal<br>Lesion</span></div>
+            <figcaption>Oral mucosal lesions</figcaption> -->
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/unlabeled_images/1171360003269.0_1.jpg" alt="Oral Photograph">
+            <!-- <div class="img-placeholder ph-sand"><span>Tongue<br>Surface</span></div> -->
+            <!-- <figcaption>Tongue imaging</figcaption> -->
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/unlabeled_images/1235114006665.0_1.jpg" alt="Oral Photograph">
+            <!-- <div class="img-placeholder ph-teal"><span>Dental<br>Restoration</span></div> -->
+            <!-- <figcaption>Restorative dentistry images</figcaption> -->
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/unlabeled_images/314447004531.0_1.jpg" alt="Oral Photograph">
+            <!-- <div class="img-placeholder ph-navy"><span>Full-Arch<br>View</span></div> -->
+            <!-- <figcaption>Intraoral full-arch views</figcaption> -->
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. MODEL OVERVIEW — pipeline diagram cards
+         ============================================================ -->
+    <section class="section" id="model">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-eyebrow">Model</span>
+          <h2 class="section-title">How DOVE Is Built</h2>
+          <p class="section-desc">
+            A self-supervised teacher–student pipeline distills domain-specific
+            visual knowledge from raw oral photographs.
+          </p>
+        </div>
+
+        <div class="pipeline reveal">
+          <div class="pipe-card">
+            <div class="pipe-num">1</div>
+            <h3>Input Images</h3>
+            <p>Large-scale unlabeled oral photographs</p>
+          </div>
+          <div class="pipe-arrow" aria-hidden="true">→</div>
+          <div class="pipe-card">
+            <div class="pipe-num">2</div>
+            <h3>Model Initialization</h3>
+            <p>Vision Transformer backbone initialized from general-domain DINOv3 weights.</p>
+          </div>
+          <div class="pipe-arrow" aria-hidden="true">→</div>
+          <div class="pipe-card">
+            <div class="pipe-num">3</div>
+            <h3>Teacher–Student Training</h3>
+            <p>Self-supervised learning with multi-crop augmentation, no labels required.</p>
+          </div>
+          <div class="pipe-arrow" aria-hidden="true">→</div>
+          <div class="pipe-card">
+            <div class="pipe-num">4</div>
+            <h3>DOVE Encoder</h3>
+            <p>A frozen, transferable oral-domain visual representation.</p>
+          </div>
+          <div class="pipe-arrow" aria-hidden="true">→</div>
+          <div class="pipe-card">
+            <div class="pipe-num">5</div>
+            <h3>Downstream Tasks</h3>
+            <p>Classification · Segmentation · Retrieval · Feature Visualization.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. NAVIGATION CARDS — links to result pages
+         ============================================================ -->
+    <section class="section section-gray" id="results">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-eyebrow">Experiments</span>
+          <h2 class="section-title">Explore the Results</h2>
+        </div>
+
+        <div class="nav-cards reveal">
+          <a href="classification.html" class="nav-card">
+            <span class="nav-card-icon" aria-hidden="true">◧</span>
+            <h3>Classification Results</h3>
+            <p>Few-shot evaluation across oral image classification benchmarks.</p>
+            <span class="nav-card-link">View results →</span>
+          </a>
+          <a href="segmentation.html" class="nav-card">
+            <span class="nav-card-icon" aria-hidden="true">▦</span>
+            <h3>Segmentation Results</h3>
+            <p>Dense prediction performance across oral image segmentation benchmarks.</p>
+            <span class="nav-card-link">View results →</span>
+          </a>
+          <a href="retrieval.html" class="nav-card">
+            <span class="nav-card-icon" aria-hidden="true">✳</span>
+            <h3>PCA Visualization</h3>
+            <p>Image retrieval and patch-level PCA revealing the structure of learned features.</p>
+            <span class="nav-card-link">View results →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER (shared across all pages)
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-title">DOVE: Dental Optical Visual Encoder</p>
+      <p class="footer-sub">Self-supervised learning for oral photography understanding</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
