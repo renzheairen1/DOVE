@@ -37,15 +37,8 @@
 
   <main>
 
-    <!-- ============================================================
-         1. HERO SECTION — animated dove, title, CTA buttons
-         ============================================================ -->
     <section class="hero" id="hero"> <!--hero section:首页最重要的大区域-->
       <div class="container hero-content">
-
-        <!-- Animated dove: pure SVG + CSS (floating, subtle wing motion, soft glow) -->
-        <!-- To use a raster logo instead, replace this block with:
-             <img src="assets/dove.webp" alt="DOVE logo" class="dove-img"> -->
         <div class="dove-wrap" aria-hidden="true">
           <div class="dove-glow"></div>
           <svg class="dove-svg" viewBox="0 0 240 200" role="img" aria-label="Stylized dove">
@@ -103,14 +96,10 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         2. RESEARCH OVERVIEW — abstract-style text block
-         ============================================================ -->
-    <section class="section" id="overview">
       <div class="container narrow reveal">
         <span class="section-eyebrow">Research Overview</span> <!--span：inline element行内元素,包裹一小段元素，用css单独控制-->
         <h2 class="section-title">Learning from Unlabeled Oral Photographs</h2>
-        <p class="abstract-text">
+        <p class="abstract-text"> <!--后面考虑换成摘要-->
           Oral photographs contain rich clinical information but exhibit substantial visual
           heterogeneity caused by variations in imaging devices, illumination, viewing angles,
           and clinical conditions. DOVE was developed through self-supervised pretraining on a
@@ -123,7 +112,7 @@
     </section>
 
     <!-- ============================================================
-         3. DATASET SHOWCASE — responsive gallery with hover zoom
+         3. DATASET SHOWCASE 
          ============================================================ -->
     <section class="section section-gray" id="data">
       <div class="container">
@@ -134,10 +123,6 @@
             DOVE is pretrained on various unlabeled clinical photos with different semantics.
           </p>
         </div>
-
-        <!-- Gallery grid. Each cell uses a CSS placeholder;
-             replace <div class="img-placeholder ..."> with
-             <img src="assets/data_tooth.webp" alt="..."> when images are ready. -->
         <div class="gallery reveal">
           <figure class="gallery-item">
             <img src="assets/unlabeled_images/844846006489.0_1.webp" alt="Oral Photograph">
@@ -174,7 +159,7 @@
     </section>
 
     <!-- ============================================================
-         4. MODEL OVERVIEW — pipeline diagram cards
+         4. MODEL OVERVIEW 
          ============================================================ -->
     <section class="section" id="model">
       <div class="container">
@@ -222,7 +207,7 @@
     </section>
 
     <!-- ============================================================
-         5. NAVIGATION CARDS — links to result pages
+         5. NAVIGATION CARDS 
          ============================================================ -->
     <section class="section section-gray" id="results">
       <div class="container">
