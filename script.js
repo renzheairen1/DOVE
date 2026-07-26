@@ -1,4 +1,4 @@
-/* Shared navigation and reveal behavior. */
+/* Shared navigation behavior. */
 document.addEventListener("DOMContentLoaded", () => {
   const navToggle = document.getElementById("navToggle");
   const navLinks = document.getElementById("navLinks");
@@ -17,7 +17,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  const releaseLink = document.querySelector("[data-release-note]");
+  if (releaseLink) {
+    releaseLink.addEventListener("click", (event) => {
+      event.preventDefault();
+      const note = document.getElementById(releaseLink.getAttribute("aria-describedby"));
+      if (note) note.hidden = false;
+    });
+  }
+
+  document.querySelectorAll('a[href^="#"]:not([data-release-note])').forEach((anchor) => {
     anchor.addEventListener("click", (event) => {
       const target = document.querySelector(anchor.getAttribute("href"));
       if (!target) return;
@@ -26,20 +35,4 @@ document.addEventListener("DOMContentLoaded", () => {
       window.scrollTo({ top, behavior: "smooth" });
     });
   });
-
-  const revealElements = document.querySelectorAll(".reveal");
-  if (!("IntersectionObserver" in window)) {
-    revealElements.forEach((element) => element.classList.add("visible"));
-    return;
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add("visible");
-      observer.unobserve(entry.target);
-    });
-  }, { threshold: 0.1 });
-
-  revealElements.forEach((element) => observer.observe(element));
 });
