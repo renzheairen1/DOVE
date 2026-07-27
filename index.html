@@ -103,13 +103,7 @@
         <span class="section-eyebrow">Research Overview</span> <!--span：inline element行内元素,包裹一小段元素，用css单独控制-->
         <h2 class="section-title">Learning from Unlabeled Oral Photographs</h2>
         <p class="abstract-text"> <!--后面考虑换成摘要-->
-          Oral photographs contain rich clinical information but exhibit substantial visual
-          heterogeneity caused by variations in imaging devices, illumination, viewing angles,
-          and clinical conditions. DOVE was developed through self-supervised pretraining on a
-          large-scale corpus of unlabeled oral photographs using a teacher–student framework
-          derived from DINOv3. The model learns domain-specific visual representations and
-          demonstrates strong transferability across multiple oral imaging tasks, including
-          classification, semantic segmentation, and image retrieval.
+          Oral photographs contain clinically relevant information and are widely used across dental disciplines; however, most artificial intelligence models are trained for individual tasks and rely on costly expert annotations. Whether domain-specific self-supervised pretraining can produce a transferable visual representation for heterogeneous oral-photography tasks remains unclear. We developed DOVE (Dental Optical Visual Encoder) by continuing self-supervised pretraining on approximately 650,000 unlabeled oral photographs collected from publicly accessible sources. With all backbone parameters frozen, DOVE was evaluated against DINOv3, ViT, and ResNet across 10 public and private datasets spanning single-label classification, multilabel classification, and semantic segmentation. Single-label classification was evaluated under 1-, 5-, 10-, and 20-shot settings, whereas segmentation was evaluated under both limited-label and full-training settings. DOVE achieved higher Dice coefficients than other 3 baselines in 28 of 30 segmentation settings and higher mean intersection over union in 27 of 30 settings. Across 24 single-label classification experiments, DOVE achieved higher accuracy and higher macro-F1 scores in 22 experiments than other 3 baselines. It also outperformed all 3 baselines on both multilabel datasets. Qualitative retrieval and local-feature analyses further suggested improved organization of image-level and spatial representations. These findings show that oral-domain self-supervised pretraining can improve transfer across diverse oral-photography tasks, with consistent advantages in many limited-label classification and segmentation settings. DOVE therefore provides a shared backbone for oral-photography research, facilitating broader applications across diverse dental disciplines.
         </p>
       </div>
     </section>
