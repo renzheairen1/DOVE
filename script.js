@@ -1,4 +1,3 @@
-/* Shared navigation behavior. */
 document.addEventListener("DOMContentLoaded", () => {
   const navToggle = document.getElementById("navToggle");
   const navLinks = document.getElementById("navLinks");
