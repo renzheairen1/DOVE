@@ -55,7 +55,7 @@
 
             <!-- Back wing (behind body) -->
             <path class="wing wing-back" fill="url(#doveWing)" opacity="0.55"
-              d="M118 98 C 94 62 60 46 30 48 C 56 68 78 94 98 110 Z" />  <!-- opacity 透明度-->
+              d="M118 98 C 94 62 60 46 30 48 C 56 68 78 94 98 110 Z" />  
 
             <!-- Tail -->
             <path fill="url(#doveBody)" d="M56 126 L18 152 L64 142 Z" />
@@ -109,7 +109,7 @@
     </section>
 
     <!-- ============================================================
-         3. DATASET SHOWCASE 
+         DATASET SHOWCASE 
          ============================================================ -->
     <section class="section section-gray" id="data">
       <div class="container">
@@ -259,56 +259,9 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         4. MODEL OVERVIEW 
-         ============================================================ -->
-    <section class="section" id="model">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="section-eyebrow">Model</span>
-          <h2 class="section-title">How DOVE Is Built</h2>
-          <p class="section-desc">
-            A self-supervised teacher–student pipeline distills domain-specific
-            visual knowledge from raw oral photographs.
-          </p>
-        </div>
-
-        <div class="pipeline reveal">
-          <div class="pipe-card">
-            <div class="pipe-num">1</div>
-            <h3>Input Images</h3>
-            <p>Large-scale unlabeled oral photographs</p>
-          </div>
-          <div class="pipe-arrow" aria-hidden="true">→</div>
-          <div class="pipe-card">
-            <div class="pipe-num">2</div>
-            <h3>Model Initialization</h3>
-            <p>Vision Transformer backbone initialized from general-domain DINOv3 weights.</p>
-          </div>
-          <div class="pipe-arrow" aria-hidden="true">→</div>
-          <div class="pipe-card">
-            <div class="pipe-num">3</div>
-            <h3>Teacher–Student Training</h3>
-            <p>Self-supervised learning with multi-crop augmentation, no labels required.</p>
-          </div>
-          <div class="pipe-arrow" aria-hidden="true">→</div>
-          <div class="pipe-card">
-            <div class="pipe-num">4</div>
-            <h3>DOVE Encoder</h3>
-            <p>A frozen, transferable oral-domain visual representation.</p>
-          </div>
-          <div class="pipe-arrow" aria-hidden="true">→</div>
-          <div class="pipe-card">
-            <div class="pipe-num">5</div>
-            <h3>Downstream Tasks</h3>
-            <p>Classification · Segmentation · Retrieval · Feature Visualization.</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- ============================================================
-         5. NAVIGATION CARDS 
+         NAVIGATION CARDS 
          ============================================================ -->
     <section class="section section-gray" id="results">
       <div class="container">
