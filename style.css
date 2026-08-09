@@ -43,7 +43,7 @@ img { max-width: 100%; display: block; }
 a   { color: inherit; text-decoration: none; }
 
 .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
-.container.narrow { max-width: 760px; }
+.container.narrow { max-width: 1120; }
 
 /* ---------- 3. Navigation bar ---------- */
 .navbar {
