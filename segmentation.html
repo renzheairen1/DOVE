@@ -92,10 +92,77 @@
       </article>
     </div></section>
 
+    <section class="protocol-band"><div class="container protocol-line"><span>Protocol</span><p>DOVE encoder <i>+</i> Linear segmentation head</p><div><b>5%</b><b>10%</b><b>20%</b><b>50%</b><b>100%</b></div></div></section>
+
+    <section class="result-section segmentation-list"><div class="container">
+      <header class="result-section-head reveal"><span class="section-no">02</span><div><span class="section-eyebrow">Four benchmarks</span><h2>End-to-End Finetuning</h2></div></header>
+
+      <article class="segmentation-block reveal">
+        <aside class="segmentation-intro">
+          <span>Dataset 01</span>
+          <h3>ToothSeg</h3>
+          <p>The dataset was annotated using an in-house software platform developed by our team. There are a total of 1106 pieces. Divided into 33 segmentation categories, each of the 32 teeth is treated as a separate category, with the background as an additional category.</p>
+          <dl><div><dt>Images</dt><dd>1106</dd></div><div><dt>Classes</dt><dd>33</dd></div></dl>
+        </aside>
+        <div class="segmentation-content">
+          <figure class="result-slot">
+            <img src="assets/results/segmentation/toothseg_per_tooth_finetune_macro_dice.webp" alt="results image">
+            <figcaption><b>Figure 1</b>Four-model comparison on ToothSeg.</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="segmentation-block reveal">
+        <aside class="segmentation-intro">
+          <span>Dataset 02</span>
+          <h3>Gingivitis</h3>
+          <p>Dataset introduction / task description</p>
+          <dl><div><dt>Images</dt><dd>284</dd></div><div><dt>Classes</dt><dd>2</dd></div></dl>
+        </aside>
+        <div class="segmentation-content">
+          <figure class="result-slot">
+            <img src="assets/results/segmentation/gingivitis_finetune_macro_dice.webp" alt="results image">
+            <figcaption><b>Figure 2</b>Four-model comparison on Gingivitis</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="segmentation-block reveal">
+        <aside class="segmentation-intro">
+          <span>Dataset 03</span>
+          <h3>DentalAI</h3>
+          <p>The dataset consists of 2495 images with 28904 labeled objects belonging to 4 different classes including tooth, caries, cavity, and other: crack.</p>
+          <dl><div><dt>Images</dt><dd>2495</dd></div><div><dt>Classes</dt><dd>4</dd></div>
+          </dl>
+        </aside>
+        <div class="segmentation-content">
+          <figure class="result-slot">
+            <img src="assets/results/segmentation/dentalai_segmentation_finetune_macro_dice.webp" alt="results image">
+            <figcaption><b>Figure 3</b> Four-model comparison on Dentalai.</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="segmentation-block reveal">
+        <aside class="segmentation-intro">
+          <span>Dataset 04</span>
+          <h3>AlphaDent</h3>
+          <p>It contains 1,320 high-resolution DSLR photographs acquired using a Canon 6D Mark II camera and a 100-mm macro lens. Dentist-annotated instance masks are provided for nine categories: abrasion, fillings, crowns, and six classes of dental caries</p>
+          <dl><div><dt>Images</dt><dd>1320</dd></div><div><dt>Classes</dt><dd>9</dd></div></dl>
+        </aside>
+        <div class="segmentation-content">
+          <figure class="result-slot">
+            <img src="assets/results/segmentation/alphadent_segmentation_finetune_macro_dice.webp" alt="results image">
+            <figcaption><b>Figure 4</b> Four-model comparison on AlphaDent</figcaption>
+          </figure>
+        </div>
+      </article>
+    </div></section>
+
     <section class="result-section soft-section">
       <div class="container">
         <header class="result-section-head reveal">
-          <span class="section-no">02</span><div><span class="section-eyebrow">Qualitative results</span><h2>Segmentation Visualization</h2></div></header>
+          <span class="section-no">03</span><div><span class="section-eyebrow">Qualitative results</span><h2>Segmentation Visualization</h2></div></header>
           <div class="qualitative-slot reveal">
             <div class="qualitative-labels"><span>Input image</span><span>Manual truth</span><span>DINOv3</span><span>DOVE</span></div>
             <div class="qualitative-canvas">
