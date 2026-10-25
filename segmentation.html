@@ -24,11 +24,11 @@
   </header>
 
   <main>
-    <section class="minimal-hero"><div class="container narrow-wide"><span class="section-eyebrow">Downstream Evaluation · Segmentation</span><h1>DOVE Semantic Segmentation Performance</h1><p>Frozen encoder evaluation with a shared lightweight segmentation head.</p></div></section>
-    <section class="protocol-band"><div class="container protocol-line"><span>Protocol</span><p>Frozen DOVE encoder <i>+</i> Linear segmentation head</p><div><b>5-shot</b><b>10-shot</b><b>20-shot</b><b>50-shot</b><b>Full set</b></div></div></section>
+    <section class="minimal-hero"><div class="container narrow-wide"><span class="section-eyebrow">Downstream Evaluation · Segmentation</span><h1>DOVE Semantic Segmentation Performance</h1><p>Evaluation across 4 segmentation benchmarks</p></div></section>
+    <section class="protocol-band"><div class="container protocol-line"><span>Protocol</span><p>Frozen DOVE encoder <i>+</i> Linear segmentation head</p><div><b>5-shot</b><b>10-shot</b><b>20-shot</b><b>50-shot</b></div></div></section>
 
     <section class="result-section segmentation-list"><div class="container">
-      <header class="result-section-head reveal"><span class="section-no">01</span><div><span class="section-eyebrow">Four benchmarks</span><h2>Dataset-level results</h2></div></header>
+      <header class="result-section-head reveal"><span class="section-no">01</span><div><span class="section-eyebrow">Four benchmarks</span><h2>Few-shot Transfer</h2></div></header>
 
       <article class="segmentation-block reveal">
         <aside class="segmentation-intro">
@@ -39,7 +39,7 @@
         </aside>
         <div class="segmentation-content">
           <figure class="result-slot">
-            <img src="assets/results/segmentation/toothseg_instance_segmentation_dot_whisker_lollipop.webp" alt="results image">
+            <img src="assets/results/segmentation/toothseg_per_tooth_seg_linear_macro_dice_dot_whisker.webp" alt="results image">
             <figcaption><b>Figure 1</b>Four-model comparison on ToothSeg.</figcaption>
           </figure>
         </div>
@@ -54,7 +54,7 @@
         </aside>
         <div class="segmentation-content">
           <figure class="result-slot">
-            <img src="assets/results/segmentation/gingivitis_metadent_segmentation_dot_whisker_lollipop.webp" alt="results image">
+            <img src="assets/results/segmentation/gingivitis_seg_linear_macro_dice_dot_whisker.webp" alt="results image">
             <figcaption><b>Figure 2</b>Four-model comparison on Gingivitis</figcaption>
           </figure>
         </div>
@@ -63,14 +63,14 @@
       <article class="segmentation-block reveal">
         <aside class="segmentation-intro">
           <span>Dataset 03</span>
-          <h3>Dentalai</h3>
+          <h3>DentalAI</h3>
           <p>The dataset consists of 2495 images with 28904 labeled objects belonging to 4 different classes including tooth, caries, cavity, and other: crack.</p>
           <dl><div><dt>Images</dt><dd>2495</dd></div><div><dt>Classes</dt><dd>4</dd></div>
           </dl>
         </aside>
         <div class="segmentation-content">
           <figure class="result-slot">
-            <img src="assets/results/segmentation/dentalai_segmentation_dot_whisker_lollipop.webp" alt="results image">
+            <img src="assets/results/segmentation/dentalai_seg_linear_macro_dice_dot_whisker.webp" alt="results image">
             <figcaption><b>Figure 3</b> Four-model comparison on Dentalai.</figcaption>
           </figure>
         </div>
@@ -85,7 +85,7 @@
         </aside>
         <div class="segmentation-content">
           <figure class="result-slot">
-            <img src="assets/results/segmentation/alphadent_segmentation_dot_whisker_lollipop.webp" alt="results image">
+            <img src="assets/results/segmentation/alphadent_seg_linear_macro_dice_dot_whisker.webp" alt="results image">
             <figcaption><b>Figure 4</b> Four-model comparison on AlphaDent</figcaption>
           </figure>
         </div>
@@ -95,14 +95,14 @@
     <section class="result-section soft-section">
       <div class="container">
         <header class="result-section-head reveal">
-          <span class="section-no">02</span><div><span class="section-eyebrow">Qualitative results</span><h2>Linear segmentation examples</h2></div></header>
+          <span class="section-no">02</span><div><span class="section-eyebrow">Qualitative results</span><h2>Segmentation Visualization</h2></div></header>
           <div class="qualitative-slot reveal">
-            <div class="qualitative-labels"><span>Input image</span><span>Ground truth</span><span>DINOv3</span><span>DOVE</span></div>
+            <div class="qualitative-labels"><span>Input image</span><span>Manual truth</span><span>DINOv3</span><span>DOVE</span></div>
             <div class="qualitative-canvas">
-              <img src="assets/results/segmentation/visualization/original.webp">
-              <img src="assets/results/segmentation/visualization/ground_truth.webp">
-              <img src="assets/results/segmentation/visualization/baseline_prediction.webp">
-              <img src="assets/results/segmentation/visualization/teacher_checkpoint_prediction.webp">
+              <img src="assets/results/segmentation/visualization/1/original.webp">
+              <img src="assets/results/segmentation/visualization/1/ground_truth.webp">
+              <img src="assets/results/segmentation/visualization/1/baseline_prediction.webp">
+              <img src="assets/results/segmentation/visualization/1/teacher_checkpoint_prediction.webp">
             </div>
 
             <div class="qualitative-canvas">

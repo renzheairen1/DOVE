@@ -28,13 +28,13 @@
       <div class="container narrow-wide">
         <span class="section-eyebrow">Downstream Evaluation · Classification</span>
         <h1>DOVE Classification Performance</h1>
-        <p>Frozen-representation evaluation across single-label and multi-label oral photography benchmarks.</p>
+        <p>Evaluation across single-label and multi-label oral photography benchmarks.</p>
       </div>
     </section>
 
     <section class="result-section" id="single-label">
       <div class="container">
-        <header class="result-section-head reveal"><span class="section-no">01</span><div><span class="section-eyebrow">Single-label classification</span><h2>Six few-shot benchmarks</h2></div></header>
+        <header class="result-section-head reveal"><span class="section-no">01</span><div><span class="section-eyebrow">Single-label classification</span><h2>Few-shot Transfer</h2></div></header>
         <div class="protocol-line reveal"><span>Protocol</span><p>Frozen DOVE encoder <i>&rarr;</i> image embeddings <i>&rarr;</i> L2 normalization <i>&rarr;</i> cosine 1-NN classifier</p><div><b>1-shot</b><b>5-shot</b><b>10-shot</b><b>20-shot</b></div></div>
 
         <div class="dataset-result-list">
@@ -46,7 +46,7 @@
               <p>This dataset, comprises 500 oral cancer images and 450 non-cancer oral images.</p>
             </div>
             <figure class="result-slot">
-              <img src="assets/results/single-label-classification/oral_cancer2_0_knn_model_comparison.webp" alt="results image">
+              <img src="assets/results/single-label-classification/Oral_Cancer_Dataset_knn_macro_f1_grouped_bar.png" alt="results image">
               <figcaption><b>Figure 1</b> Four-model comparison on ORAL CANCER.</figcaption>
             </figure>
           </article>
@@ -57,7 +57,7 @@
               <dl><div><dt>Classes</dt><dd>3</dd></div><div><dt>Images</dt><dd>2,000</dd></div></dl>
               <p>The dataset comprises 2000 original JPG images across three categories: Advanced Enamel Caries (n=800), Early Stage Enamel Caries (n=800), and No Enamel Caries (n=400).</p></div>
             <figure class="result-slot">
-              <img src="assets/results/single-label-classification/caries_spectra_knn_model_comparison.webp" alt="results image">
+              <img src="assets/results/single-label-classification/Caries-Spectra_knn_macro_f1_grouped_bar.png" alt="results image">
               <figcaption><b>Figure 2</b> Four-model comparison on  Caries-Spectra.</figcaption>\
             </figure>
           </article>
@@ -68,7 +68,7 @@
               <dl><div><dt>Classes</dt><dd>2</dd></div><div><dt>Images</dt><dd>323</dd></div></dl>
               <p>The dataset contains images of 165 benign lesions and 158 malignant lesions.</p></div>
             <figure class="result-slot">
-              <img src="assets/results/single-label-classification/benign_malignant_knn_model_comparison.webp" alt="results image">
+              <img src="assets/results/single-label-classification/Malignancy_Detection_Dataset_knn_macro_f1_grouped_bar.png" alt="results image">
               <figcaption><b>Figure 3</b> Four-model comparison on Oral Leisions: Malignancy Detection Dataset.</figcaption>
             </figure>
           </article>
@@ -79,7 +79,7 @@
               <dl><div><dt>Classes</dt><dd>3</dd></div><div><dt>Images</dt><dd>6,613</dd></div></dl>
               <p>The dataset contains 6,613 images of calculus, hypodontia and ulcer</p></div>
             <figure class="result-slot">
-              <img src="assets/results/single-label-classification/oral_disease_knn_model_comparison.webp" alt="results image">
+              <img src="assets/results/single-label-classification/Oral_Disease_knn_macro_f1_grouped_bar.png" alt="results image">
               <figcaption><b>Figure 4</b> Four-model comparison on Oral Disease Sub.</figcaption>
             </figure>
           </article>
@@ -90,11 +90,11 @@
               <dl><div><dt>Classes</dt><dd>5</dd></div><div><dt>Images</dt><dd>1348</dd></div></dl>
               <p>The dataset comprises 1,348 intraoral mucosal images categorized into five classes: normal oral mucosa, oral leukoplakia, oral lichen planus, oral submucous fibrosis, and oral cancer.</p></div>
             <figure class="result-slot">
-              <img src="assets/results/single-label-classification/mouth_data_knn_model_comparison.webp" alt="results image">
+              <img src="assets/results/single-label-classification/Oral_Mucosal_Diseases_knn_macro_f1_grouped_bar.png" alt="results image">
               <figcaption><b>Figure 5</b> Four-model comparison on Dataset-of-oral-mucosal-diseases.</figcaption>
             </figure>
           </article>
-          <article class="dataset-result-row reveal">
+          <!-- <article class="dataset-result-row reveal">
             <div class="editable-card">
               <span>Dataset 06</span>
               <h3>OralView</h3><dl><div><dt>Classes</dt><dd>9</dd></div><div><dt>Images</dt><dd>4,415</dd></div></dl>
@@ -103,18 +103,78 @@
               <img src="assets/results/single-label-classification/whu_hospital_changed_knn_model_comparison.webp" alt="results image">
               <figcaption><b>Figure 6</b> Four-model comparison on OralView.</figcaption>
             </figure>
-          </article>
+          </article> -->
         </div>
       </div>
     </section>
 
+    <section>
+      <div class="container">
+        <header class="result-section-head reveal"><span class="section-no">02</span><div><span class="section-eyebrow">SINGLE-LABEL CLASSIFICAtiON</span><h2>End-to-End Finetuning</h2></div></header>
+        <div class="protocol-line reveal"><span>Protocol</span><p>Trainable encoder + classification head<i>&rarr;</i> Supervised fine-tuning</p><div><b>5%</b><b>10%</b><b>20%</b><b>30%</b><b>50%</b><b>100%</b></div></div>
+        <div class="dataset-result-list">
+          <article class="dataset-result-row reveal">
+            <div class="editable-card">
+              <span>Dataset 01</span>
+              <h3>ORAL CANCER</h3>
+              <dl><div><dt>Classes</dt><dd>2</dd></div><div><dt>Images</dt><dd>950</dd></div></dl>
+              <p>This dataset, comprises 500 oral cancer images and 450 non-cancer oral images.</p>
+            </div>
+            <figure class="result-slot">
+              <img src="assets/results/single-label-classification/oral_cancer2_finetune_auroc.png" alt="results image">
+              <figcaption><b>Figure 1</b> Four-model comparison on ORAL CANCER.</figcaption>
+            </figure>
+          </article>
+          <article class="dataset-result-row reveal">
+            <div class="editable-card">
+              <span>Dataset 02</span>
+              <h3>Caries-Spectra</h3>
+              <dl><div><dt>Classes</dt><dd>3</dd></div><div><dt>Images</dt><dd>2,000</dd></div></dl>
+              <p>The dataset comprises 2000 original JPG images across three categories: Advanced Enamel Caries (n=800), Early Stage Enamel Caries (n=800), and No Enamel Caries (n=400).</p></div>
+            <figure class="result-slot">
+              <img src="assets/results/single-label-classification/caries_spectra_finetune_auroc.png" alt="results image">
+              <figcaption><b>Figure 2</b> Four-model comparison on  Caries-Spectra.</figcaption>\
+            </figure>
+          </article>
+          <article class="dataset-result-row reveal">
+            <div class="editable-card">
+              <span>Dataset 03</span>
+              <h3>Oral Lesions: Malignancy Detection Dataset</h3>
+              <dl><div><dt>Classes</dt><dd>2</dd></div><div><dt>Images</dt><dd>323</dd></div></dl>
+              <p>The dataset contains images of 165 benign lesions and 158 malignant lesions.</p></div>
+            <figure class="result-slot">
+              <img src="assets/results/single-label-classification/benign_malignant_finetune_auroc.png" alt="results image">
+              <figcaption><b>Figure 3</b> Four-model comparison on Oral Leisions: Malignancy Detection Dataset.</figcaption>
+            </figure>
+          </article>
+          <article class="dataset-result-row reveal">
+            <div class="editable-card">
+              <span>Dataset 04</span>
+              <h3>Oral Disease Sub</h3>
+              <dl><div><dt>Classes</dt><dd>3</dd></div><div><dt>Images</dt><dd>1,799</dd></div></dl>
+              <p>The dataset contains 6,613 images of calculus, hypodontia and ulcer</p></div>
+            <figure class="result-slot">
+              <img src="assets/results/single-label-classification/oral_disease_finetune_auroc.png" alt="results image">
+              <figcaption><b>Figure 4</b> Four-model comparison on Oral Disease Sub.</figcaption>
+            </figure>
+          </article>
+          <article class="dataset-result-row reveal">
+            <div class="editable-card">
+              <span>Dataset 05</span>
+              <h3>Dataset-of-oral-mucosal-diseases</h3>
+              <dl><div><dt>Classes</dt><dd>5</dd></div><div><dt>Images</dt><dd>1348</dd></div></dl>
+              <p>The dataset comprises 1,348 intraoral mucosal images categorized into five classes: normal oral mucosa, oral leukoplakia, oral lichen planus, oral submucous fibrosis, and oral cancer.</p></div>
+            <figure class="result-slot">
+              <img src="assets/results/single-label-classification/mouth_data_finetune_auroc.png" alt="results image">
+              <figcaption><b>Figure 5</b> Four-model comparison on Dataset-of-oral-mucosal-diseases.</figcaption>
+            </figure>
+          </article>
+      </div>
+    </section>
     <section class="result-section soft-section" id="multi-label">
       <div class="container">
-        <header class="result-section-head reveal"><span class="section-no">02</span><div><span class="section-eyebrow">Multi-label classification</span><h2>Two full-set benchmarks</h2></div></header>
-        <div class="protocol-line reveal"><span>Protocol</span><p> Frozen DOVE encoder <i>&rarr;</i> linear probe classifier</p>
-          <div><b>all</b></div>
-        </div>
-
+        <header class="result-section-head reveal"><span class="section-no">03</span><div><span class="section-eyebrow">Multi-label classification</span><h2>End-to-End Finetuning</h2></div></header>
+        <div class="protocol-line reveal"><span>Protocol</span><p> Trainable encoder + classification head <i>&rarr;</i> Supervised fine-tuning</p><div><b>5%</b><b>10%</b><b>20%</b><b>30%</b><b>50%</b><b>100%</b></div></div>
         <div class="dataset-result-list">
           <article class="dataset-result-row reveal">
             <div class="editable-card">
@@ -123,18 +183,18 @@
               <dl><div><dt>Labels</dt><dd>4</dd></div><div><dt>Images</dt><dd>2495</dd></div></dl>
               <p>The dataset consists of 2495 images with 28904 labeled objects belonging to 4 different classes including tooth, caries, cavity, and other: crack.</p></div>
             <figure class="result-slot">
-              <img src="assets/results/multi-label-classification/dentalai_classification_model_comparison.webp" alt="results image">
+              <img src="assets/results/multi-label-classification/dentalai_multilabel_finetune_auroc.png" alt="results image">
              <figcaption><b>Figure 7</b> Multi-label comparison on Dentalai.</figcaption></figure>
           </article>
           <article class="dataset-result-row reveal">
             <div class="editable-card">
               <span>Dataset B</span>
               <h3>AlphaDent</h3>
-              <dl><div><dt>Labels</dt><dd>9</dd></div><div><dt>Images</dt><dd>&mdash;1320</dd></div></dl>
+              <dl><div><dt>Labels</dt><dd>9</dd></div><div><dt>Images</dt><dd>1320</dd></div></dl>
               <p>It contains 1,320 high-resolution DSLR photographs acquired using a Canon 6D Mark II camera and a 100-mm macro lens. Dentist-annotated instance masks are provided for nine categories: abrasion, fillings, crowns, and six classes of dental caries</p>
             </div>
             <figure class="result-slot">
-              <img src="assets/results/multi-label-classification/alphadent_classification_model_comparison.webp" alt="results image">
+              <img src="assets/results/multi-label-classification/alphadent_multilabel_finetune_auroc.png" alt="results image">
               <figcaption><b>Figure 8</b> Multi-label comparison on AlphaDent.</figcaption>
             </figure>
           </article>
