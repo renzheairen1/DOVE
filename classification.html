@@ -171,36 +171,6 @@
           </article>
       </div>
     </section>
-    <section class="result-section soft-section" id="multi-label">
-      <div class="container">
-        <header class="result-section-head reveal"><span class="section-no">03</span><div><span class="section-eyebrow">Multi-label classification</span><h2>End-to-End Finetuning</h2></div></header>
-        <div class="protocol-line reveal"><span>Protocol</span><p> Trainable encoder + classification head <i>&rarr;</i> Supervised fine-tuning</p><div><b>5%</b><b>10%</b><b>20%</b><b>30%</b><b>50%</b><b>100%</b></div></div>
-        <div class="dataset-result-list">
-          <article class="dataset-result-row reveal">
-            <div class="editable-card">
-              <span>Dataset A</span>
-              <h3>Dentalai</h3>
-              <dl><div><dt>Labels</dt><dd>4</dd></div><div><dt>Images</dt><dd>2495</dd></div></dl>
-              <p>The dataset consists of 2495 images with 28904 labeled objects belonging to 4 different classes including tooth, caries, cavity, and other: crack.</p></div>
-            <figure class="result-slot">
-              <img src="assets/results/multi-label-classification/dentalai_multilabel_finetune_auroc.webp" alt="results image">
-             <figcaption><b>Figure 7</b> Multi-label comparison on Dentalai.</figcaption></figure>
-          </article>
-          <article class="dataset-result-row reveal">
-            <div class="editable-card">
-              <span>Dataset B</span>
-              <h3>AlphaDent</h3>
-              <dl><div><dt>Labels</dt><dd>9</dd></div><div><dt>Images</dt><dd>1320</dd></div></dl>
-              <p>It contains 1,320 high-resolution DSLR photographs acquired using a Canon 6D Mark II camera and a 100-mm macro lens. Dentist-annotated instance masks are provided for nine categories: abrasion, fillings, crowns, and six classes of dental caries</p>
-            </div>
-            <figure class="result-slot">
-              <img src="assets/results/multi-label-classification/alphadent_multilabel_finetune_auroc.webp" alt="results image">
-              <figcaption><b>Figure 8</b> Multi-label comparison on AlphaDent.</figcaption>
-            </figure>
-          </article>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="footer"><div class="container minimal-footer"><div><p class="footer-title">DOVE · Dental Optical Visual Encoder</p><p class="footer-sub">Oral photography representation learning</p></div><a href="segmentation.html">Segmentation &rarr;</a></div></footer>
